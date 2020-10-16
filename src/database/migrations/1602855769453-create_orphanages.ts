@@ -39,6 +39,10 @@ export class createOrphanages1602855769453 implements MigrationInterface {
           type: 'text',
         },
         {
+          name: 'opening_hours',
+          type: 'varchar',
+        },
+        {
           name: 'open_on_weekends',
           type: 'boolean',
           default: false,
@@ -48,7 +52,7 @@ export class createOrphanages1602855769453 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-
+    await queryRunner.dropTable('orphanages');
   }
 
 }
